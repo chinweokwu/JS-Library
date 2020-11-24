@@ -8,13 +8,11 @@ const p = document.getElementById('pages');
 const no = document.getElementById('unread');
 const cardGroup = document.querySelector('.card-group');
 
-class Book {
-  constructor(title,author,pages,read) { 
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-   }
+function Book(title, author, pages, read) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.read = read;
 }
 
 function validation() {
@@ -32,6 +30,7 @@ function validation() {
 
 function addToLibrary() {
   const newBook = new Book(t.value, a.value, p.value, no.checked ? 'Unread' : 'Read');
+
   return library.push(newBook);
 }
 
